@@ -19,6 +19,7 @@ export const searchSongs = createActionCreator(SEARCH_SONGS, term => {
     (
       {
         key: Faker.random.number(),
+        coverArtUrl: Faker.image.imageUrl(),
         artist: Faker.name.findName(),
         title: Faker.lorem.sentence(),
         lyrics: Faker.lorem.paragraphs()

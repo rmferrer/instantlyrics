@@ -18,7 +18,11 @@ class SearchBar extends Component {
   };
 
   render(){
-    return (<input placeholder="Enter song name..." value={this.state.term} onChange={this.onInputChange} />);
+    return (
+      <div className="search-bar">
+        <input placeholder="Enter song name..." value={this.state.term} onChange={this.onInputChange} />
+      </div>
+    );
   };
 };
 
