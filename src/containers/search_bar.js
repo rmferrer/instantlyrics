@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { searchSongs } from '../ducks/songs'
 
 class SearchBar extends Component {
   constructor(props){
@@ -10,7 +14,7 @@ class SearchBar extends Component {
   onInputChange(event){
     const term = event.target.value;
     this.setState({term});
-    this.props.onSearchTermChange(term);
+    this.props.searchSongs(term);
   };
 
   render(){
@@ -18,4 +22,8 @@ class SearchBar extends Component {
   };
 };
 
-export default SearchBar;
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ searchSongs }, dispatch);
+};
+
+export default connect(null, mapDispatchToProps)(SearchBar);
