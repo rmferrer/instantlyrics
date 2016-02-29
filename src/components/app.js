@@ -3,7 +3,7 @@ import { Component } from 'react';
 
 import SearchBar from '../containers/search_bar';
 import SongDetail from '../components/song_detail';
-import SongList from '../components/song_list';
+import SongList from '../containers/song_list';
 
 export default class App extends Component {
 

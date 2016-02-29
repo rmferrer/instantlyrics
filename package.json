@@ -21,6 +21,7 @@
     "babel-preset-stage-1": "^6.1.18",
     "eslint": "^2.2.0",
     "eslint-plugin-react": "^4.1.0",
+    "faker": "^3.0.1",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
