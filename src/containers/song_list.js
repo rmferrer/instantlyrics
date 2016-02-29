@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import SongListItem from '../components/song_list_item'
+import SongListItem from '../containers/song_list_item'
 
 class SongList extends Component {
   render(){
@@ -11,9 +11,9 @@ class SongList extends Component {
       );
     });
     return (
-      <div>
+      <ul>
         { songItems }
-      </div>
+      </ul>
     );
   };
 };
