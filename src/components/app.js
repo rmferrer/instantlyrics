@@ -1,10 +1,19 @@
 import React from 'react';
 import { Component } from 'react';
+import SearchBar from '../components/search_bar';
+import SongDetail from '../components/song_detail';
+import SongList from '../components/song_list';
 
 export default class App extends Component {
+
+
   render() {
     return (
-      <div>React simple starter</div>
+      <div>
+        <SearchBar />
+        <SongDetail />
+        <SongList />
+      </div>
     );
-  }
-}
+  };
+};
