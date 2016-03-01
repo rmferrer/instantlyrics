@@ -9,7 +9,9 @@ class SongDetail extends Component {
         <div className="song-detail col-md-8" />
       );
     }
-    const {title, artist, lyrics} = this.props.selectedSong;
+    const {song_obj, lyrics_obj} = this.props.selectedSong;
+    const [title, artist, lyrics] = [song_obj.track_name, song_obj.artist_name, lyrics_obj.lyrics_body];
+
     return (
       <div className="song-detail col-md-8">
         <div className="details">
