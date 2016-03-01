@@ -23,8 +23,8 @@ export const selectSong = createActionCreator(SELECT_SONG, song => {
 export default handleActions({
   [SELECT_SONG]: (state, action) => {
     return {
-      song_obj: action.payload[0],
-      lyrics_obj: action.payload[1].data.message.body.lyrics
+      song: action.payload[0],
+      lyrics: action.payload[1].data.message.body.lyrics
     };
   }
 }, {});
