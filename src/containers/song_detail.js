@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import sanitizeHtml from 'sanitize-html';
+
 
 class SongDetail extends Component {
 
   static formatLyrics(lyrics){
-    return { __html: lyrics.replace(/\r?\n|\r/g, '<br/>') };
+    const dirty = lyrics.replace(/\r?\n|\r/g, '<br/>')
+    const clean = sanitizeHtml(dirty, {
+      allowedTags: ['br']
+    });
+    return { __html: clean};
   };
 
   render(){
@@ -21,15 +27,10 @@ class SongDetail extends Component {
     return (
       <div className="song-detail col-md-8">
         <div className="details">
-          <div>Title: {title}</div>
-          <div>Artist: {artist}</div>
+          <div className="song-title">{title}</div>
+          <div className="artist-name">{artist}</div>
         </div>
-        <div className="lyrics">
-          <div>
-            Lyrics:
-            <span dangerouslySetInnerHTML={lyrics} />
-          </div>
-        </div>
+        <div className="lyrics" dangerouslySetInnerHTML={lyrics} />
       </div>
     ); // dangerouslySetInnerHTML relies on SongDetail.formatLyrics being secure
   };

@@ -8,10 +8,13 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel'
-    }]
+    preLoaders: [
+      { test: /\.json$/, loader: 'json-loader'},
+    ],
+    loaders: [
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel'},
+      { test: /\.jsx$/, exclude: /node_modules/, loader: 'babel'},
+    ]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
