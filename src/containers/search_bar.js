@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import _ from 'lodash';
 
 import { searchSongs } from '../ducks/songs'
 
@@ -9,12 +10,13 @@ class SearchBar extends Component {
     super(props);
     this.state = {term: ''};
     this.onInputChange = this.onInputChange.bind(this);
+    this.searchSongs = _.debounce(term => this.props.searchSongs(term), 300);
   }
 
   onInputChange(event){
     const term = event.target.value;
     this.setState({term});
-    this.props.searchSongs(term);
+    this.searchSongs(term);
   };
 
   render(){

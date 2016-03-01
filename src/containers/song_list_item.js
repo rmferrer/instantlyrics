@@ -7,7 +7,7 @@ import { selectSong } from '../ducks/selected_song';
 class SongListItem extends Component {
   render() {
     const {selectSong, song} = this.props;
-    const {coverArtUrl, title, artist} = song;
+    const [coverArtUrl, title, artist] = [song.album_coverart_350x350, song.track_name, song.artist_name];
 
     return (
       <li onClick={() => selectSong(song)} className="list-group-item">
