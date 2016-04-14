@@ -15,8 +15,9 @@ class SearchBar extends Component {
 
   onInputChange(event){
     const term = event.target.value;
+    const [track, artist, album] = term.trim().split('|');
     this.setState({term});
-    this.searchSongs(term);
+    this.searchSongs({track, artist, album});
   };
 
   render(){

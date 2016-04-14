@@ -33,6 +33,7 @@
     "redux": "^3.0.4",
     "redux-actions": "^0.9.1",
     "redux-promise": "^0.5.1",
+    "redux-thunk": "^2.0.1",
     "sanitize-html": "^1.11.3"
   }
 }

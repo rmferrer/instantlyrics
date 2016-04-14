@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-import ReduxPromise from 'redux-promise';
+import reduxPromise from 'redux-promise';
+import thunkMiddleware from 'redux-thunk'
 
 import App from './components/app';
 import redux_store from './redux-store';
 
-const createStoreWithMiddleware = compose(applyMiddleware(ReduxPromise),
+const createStoreWithMiddleware = compose(applyMiddleware(reduxPromise, thunkMiddleware),
   window.devToolsExtension ? window.devToolsExtension() : f => f)
 (createStore);
 

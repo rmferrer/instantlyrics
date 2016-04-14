@@ -8,16 +8,29 @@ const MusixMatch = {
   BASE_PARAMS : {
     guid: '728cbca6-600f-4b40-970d-064763544f28',
     app_id: 'community-app-v1.0',
-    format: 'json'
+    format: 'json',
+    f_has_lyrics: '1',
+    s_track_rating: 'desc',
+    s_artist_rating: 'desc',    
   },
 
-  searchSongs: function(search_term) {
+  searchExactSong: function({track, artist, album}) {
     const params = extend(
       {
-        f_has_lyrics: '1',
-        s_track_rating: 'desc',
-        s_artist_rating: 'desc',
-        q_track: search_term
+        q_track: track,
+        q_artist: artist,
+        q_album: album,
+      }, this.BASE_PARAMS);
+    const uri = `${this.MUSIXMATCH_ROOT_URL}/matcher.track.get?${qp.toString(params)}`;
+    return axios.get(uri);
+  },
+
+  searchRelatedSongs: function({track, artist, album}) {
+    const params = extend(
+      {
+        q_track: track,
+        q_artist: artist,
+        q_album: album,
       }, this.BASE_PARAMS);
     const uri = `${this.MUSIXMATCH_ROOT_URL}/track.search?${qp.toString(params)}`;
     return axios.get(uri);
