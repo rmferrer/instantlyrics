@@ -24,7 +24,7 @@ export default handleActions({
   [SELECT_SONG]: (state, action) => {
     return {
       song: action.payload[0],
-      lyrics: action.payload[1].data.message.body.lyrics
+      lyrics: action.payload[1].data.data.message.body.lyrics
     };
   }
 }, {});

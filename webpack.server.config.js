@@ -1,11 +1,12 @@
 module.exports = {
+  target: 'node',
   entry: [
-    './src/index.js'
+    './src/server/app.js'
   ],
   output: {
     path: __dirname,
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'app.js'
   },
   module: {
     preLoaders: [

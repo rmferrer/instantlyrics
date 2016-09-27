@@ -3,11 +3,11 @@ import qp from 'query-parse';
 import extend from 'extend';
 
 const MusixMatch = {
-  MUSIXMATCH_ROOT_URL : 'https://www.musixmatch.com/ws/1.1',
+  MUSIXMATCH_ROOT_URL : 'https://api.musixmatch.com/ws/1.1',
 
   BASE_PARAMS : {
-    guid: '728cbca6-600f-4b40-970d-064763544f28',
-    app_id: 'community-app-v1.0',
+    apikey: '194d9075ba3f01dc26abbdf9c7c9914a',
+    app_id: 'rmferrer_personal_app',
     format: 'json',
     f_has_lyrics: '1',
     s_track_rating: 'desc',

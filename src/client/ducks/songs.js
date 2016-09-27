@@ -37,14 +37,14 @@ export const searchSongs = search =>
 /* REDUCER for key 'songs' */
 export default handleActions({
   [SEARCH_EXACT_SONG]: (state, action) => {
-    const exact = action.payload.data.message.body === "" ? null : action.payload.data.message.body;
+    const exact = action.payload.data.data.message.body === "" ? null : action.payload.data.data.message.body;
     return {
       ...state,
       exact
     };
   },
   [SEARCH_RELATED_SONGS]: (state, action) => {
-    const related = action.payload.data.message.body.track_list;
+    const related = action.payload.data.data.message.body.track_list;
     return {
       ...state,
       related

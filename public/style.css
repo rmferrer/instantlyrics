@@ -1,0 +1,49 @@
+.search-bar {
+  margin: 20px;
+  text-align: center;
+}
+
+.search-bar input {
+  width: 75%;
+}
+
+.song-detail {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.song-detail .details {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.song-detail .song-title {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.song-detail .artist-name {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.song-item img {
+  max-width: 64px;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: #eee;
+}
+
+.lyrics, .details {
+  text-align: center;
+}
+
+.exact-hit {
+  outline: none;
+  box-shadow: 0 0 10px yellow;
+}
