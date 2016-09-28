@@ -3,6 +3,8 @@ import MusixMatch from './lib/musixmatch';
 const express = require('express');
 const app = express();
 
+app.set('port', (process.env.PORT || 5000));
+
 app.get('/api/exactSong', function (req, res) {
   const search = {
     track: req.query.track,
@@ -35,6 +37,6 @@ app.get('/api/lyrics', function (req, res) {
 
 app.use(express.static('public'));
 
-app.listen(3000, function () {
-  console.log('Listening on port 3000!');
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
