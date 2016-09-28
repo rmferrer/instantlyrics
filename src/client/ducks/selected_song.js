@@ -2,7 +2,7 @@
 
 import { createAction as createActionCreator, handleActions } from 'redux-actions';
 
-import MusixMatch from '../lib/musixmatch';
+import MusicAPI from '../lib/music_api';
 
 const _action_absolute_name = name => `selected_song/${name}`;
 
@@ -14,7 +14,7 @@ const SELECT_SONG = _action_absolute_name('SELECT_SONG');
 
 /* ACTION CREATORS */
 export const selectSong = createActionCreator(SELECT_SONG, song => {
-  const promises = [song, MusixMatch.getLyrics(song.track_id)];
+  const promises = [song, MusicAPI.getLyrics(song.track_id)];
   return Promise.all(promises);
 });
 /* END ACTION CREATORS */

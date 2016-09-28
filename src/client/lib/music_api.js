@@ -1,7 +1,7 @@
 import axios from 'axios';
 import qp from 'query-parse';
 
-const MusixMatch = {
+const MusicAPI = {
   searchExactSong: function({track, artist, album}) {
     const params = {
         track: track,
@@ -29,4 +29,4 @@ const MusixMatch = {
   }
 };
 
-export default MusixMatch;
+export default MusicAPI;

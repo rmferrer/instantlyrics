@@ -2,7 +2,7 @@
 
 import { createAction as createActionCreator, handleActions } from 'redux-actions';
 
-import MusixMatch from '../lib/musixmatch';
+import MusicAPI from '../lib/music_api';
 
 const _action_absolute_name = name => `songs/${name}`;
 
@@ -20,11 +20,11 @@ const SEARCH_RELATED_SONGS = _action_absolute_name('SEARCH_RELATED_SONGS');
 
 /* ACTION CREATORS */
 const searchExactSong = createActionCreator(SEARCH_EXACT_SONG, search => {
-  return MusixMatch.searchExactSong(search);
+  return MusicAPI.searchExactSong(search);
 });
 
 const searchRelatedSongs = createActionCreator(SEARCH_RELATED_SONGS, search => {
-  return MusixMatch.searchRelatedSongs(search);
+  return MusicAPI.searchRelatedSongs(search);
 });
 
 export const searchSongs = search =>
